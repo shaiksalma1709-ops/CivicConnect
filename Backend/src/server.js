@@ -3,7 +3,7 @@ import path from 'node:path';
 import express from 'express'; import cors from 'cors'; import helmet from 'helmet'; import morgan from 'morgan'; import rateLimit from 'express-rate-limit';
 import { env } from './config/env.js'; import { migrate } from './db/migrate.js'; import { pool } from './db/database.js';
 import authRoutes from './routes/auth.js'; import citizenRoutes from './routes/citizen.js'; import authorityRoutes from './routes/authority.js'; import workerRoutes from './routes/worker.js'; import { errorHandler,notFound } from './middleware/error.js';
-const app=express(); const app=express();
+const app=express(); 
 
 app.get("/", (req,res) => {
   res.json({ok:true,message:"CivicConnect API is running"});
